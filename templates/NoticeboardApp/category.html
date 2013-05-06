@@ -1,0 +1,10 @@
+{% extends "NoticeboardApp/base.html" %}
+{% block content %}
+<h1>Please Select a Job</h1>
+<ul>
+{% for job in allJobs %}
+    <li><a href="/category/{{ job.id }}/">{{ job.name }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

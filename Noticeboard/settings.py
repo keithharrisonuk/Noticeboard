@@ -109,8 +109,7 @@ WSGI_APPLICATION = 'Noticeboard.wsgi.application'
 
 import os
 PROJECT_DIR = os.path.dirname(__file__)
-#TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'templates').replace('\\','/'),)
-TEMPLATE_DIRS = os.path.join(PROJECT_DIR, "templates")
+TEMPLATE_DIRS = os.path.join(PROJECT_DIR, "..", "templates")
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
