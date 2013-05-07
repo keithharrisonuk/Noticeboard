@@ -8,7 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^NoticeboardApp/', include('NoticeboardApp.urls')),
-                       url(r'^$', RedirectView.as_view(url='NoticeboardApp')),
+                       #url(r'^$', RedirectView.as_view(url='NoticeboardApp')),
                        )
 
 # Serve static files when debug false

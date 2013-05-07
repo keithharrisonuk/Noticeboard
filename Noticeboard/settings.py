@@ -11,7 +11,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-PROJECT_DIR = os.path.dirname(__file__)
+#PROJECT_DIR = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 PROJECT_DIR = os.path.join(PROJECT_ROOT,'../NoticeboardApp')
 DATABASES = {
@@ -66,12 +66,11 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-PROJECT_DIR = os.path.dirname(__file__)
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT,'static/')
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_DIR,'static/'),
+    os.path.join(PROJECT_DIR,'static'),
 )
 
 # List of finder classes that know how to find static files in
