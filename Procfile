@@ -1,1 +1,1 @@
-web: gunicorn Noticeboard.wsgi
+web: python manage.py collectstatic --noinput;gunicorn Noticeboard.wsgi
