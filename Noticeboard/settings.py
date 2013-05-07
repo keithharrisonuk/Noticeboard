@@ -12,8 +12,9 @@ ADMINS = (
 MANAGERS = ADMINS
 
 #PROJECT_DIR = os.path.dirname(__file__)
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-PROJECT_DIR = os.path.join(PROJECT_ROOT,'../NoticeboardApp')
+NOTICEBOARD_DIR = os.path.abspath(os.path.dirname(__file__))
+NOTICEBOARD_APP_DIR = os.path.join(NOTICEBOARD_DIR,'../NoticeboardApp')
+ROOT_DIR = os.path.join(NOTICEBOARD_DIR, "..")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -67,10 +68,10 @@ MEDIA_URL = ''
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
+STATIC_ROOT = os.path.join(ROOT_DIR,'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_DIR,'static'),
+    os.path.join(NOTICEBOARD_APP_DIR,'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -106,7 +107,7 @@ ROOT_URLCONF = 'Noticeboard.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'Noticeboard.wsgi.application'
 
-TEMPLATE_DIRS = os.path.join(PROJECT_DIR, "..", "templates")
+TEMPLATE_DIRS = os.path.join(ROOT_DIR, "..", "templates")
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
