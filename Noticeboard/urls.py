@@ -12,7 +12,7 @@ urlpatterns = patterns('',
                        )
 
 # Serve static files when debug false
-if not settings.DEBUG:
+if settings.ENVIRONMENT == 'LIVE':
     urlpatterns += patterns('',
         (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     )

@@ -4,6 +4,7 @@ import os
 
 DEBUG = bool(os.environ.get('DEBUG', False))
 TEMPLATE_DEBUG = DEBUG
+ENVIRONMENT = os.environ.get('ENVIRONMENT', 'DEV')
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -11,9 +12,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-#PROJECT_DIR = os.path.dirname(__file__)
 NOTICEBOARD_DIR = os.path.abspath(os.path.dirname(__file__))
-NOTICEBOARD_APP_DIR = os.path.join(NOTICEBOARD_DIR,'../NoticeboardApp')
+NOTICEBOARD_APP_DIR = os.path.join(NOTICEBOARD_DIR, '../NoticeboardApp')
 ROOT_DIR = os.path.join(NOTICEBOARD_DIR, "..")
 DATABASES = {
     'default': {
