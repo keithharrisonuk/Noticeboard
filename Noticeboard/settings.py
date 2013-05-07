@@ -107,7 +107,7 @@ ROOT_URLCONF = 'Noticeboard.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'Noticeboard.wsgi.application'
 
-TEMPLATE_DIRS = os.path.join(ROOT_DIR, "..", "templates")
+TEMPLATE_DIRS = os.path.join(ROOT_DIR, "templates")
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
