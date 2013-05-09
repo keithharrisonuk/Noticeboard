@@ -15,6 +15,7 @@ class JobType(models.Model):
     def __unicode__(self):
         return self.name
 
+
 class Notice(models.Model):
     JobType = models.ForeignKey(JobType)
     CompanyName = models.CharField(max_length=100)
@@ -23,8 +24,9 @@ class Notice(models.Model):
     EmailAddress = models.CharField(max_length=150)
     Mobile = models.CharField(max_length=15)
     LandLine = models.CharField(max_length=15)
+
     def __unicode__(self):
-        return self.JobType.name + " " + self.CompanyName + " " + self.FirstName + " "+ self.LastName
+        return self.JobType.name + " " + self.CompanyName + " " + self.FirstName + " " + self.LastName
 
-
-
+    def name(self):
+        return (self.FirstName + " " + self.LastName).strip()

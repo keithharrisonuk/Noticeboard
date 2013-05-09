@@ -1,0 +1,13 @@
+{% extends "NoticeboardApp/base.html" %}
+{% block content %}
+<h1>Notices</h1>
+<ul>
+{% for notice in allNotices %}
+    <li>{{ notice.CompanyName }}</li>
+    <li>{{ notice.name }}</li>
+    <li>{{ notice.Email }}</li>
+    <li>{{ notice.Mobile }}</li>
+    <li>{{ notice.Landline }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
