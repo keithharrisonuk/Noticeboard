@@ -11,7 +11,6 @@ urlpatterns = patterns('',
                        url(r'^$', RedirectView.as_view(url='NoticeboardApp')),
                        )
 
-# Serve static files when debug false
 if settings.ENVIRONMENT == 'LIVE':
     urlpatterns += patterns('',
         (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),

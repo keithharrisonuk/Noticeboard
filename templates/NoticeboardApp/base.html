@@ -1,8 +1,10 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Noticeboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "NoticeboardApp/css/style.css" %}" media="screen"/>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
     <style>
         body {
@@ -36,15 +38,19 @@
         </div>
     </div>
 </div>
-
 <div class="container">
     {% block content %}
     {% endblock %}
+</div>
+<div class="container">
     <hr>
     <footer>
         <p>&copy; Keith Harrison 2013</p>
     </footer>
 </div>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+{% block scripts %}
+{% endblock %}
 </body>
 </html>

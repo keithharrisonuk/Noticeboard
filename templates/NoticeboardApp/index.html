@@ -1,10 +1,47 @@
 {% extends "NoticeboardApp/base.html" %}
 {% block content %}
-<h1>Please Select a Category</h1>
-<ul>
-{% for category in allCategories %}
-    <li><a href="category/{{ category.id }}/">{{ category.name }}</a></li>
-{% endfor %}
-</ul>
+    <h1>Please Select a Category</h1>
+    <div class="span12">
+        <div class="row-fluid">
+            <ul class="thumbnails">
+                {% load staticfiles %}
+                {% for category in allCategories %}
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <a href="category/{{ category.id }}/">
+                                <div id="capslide_image{{ category.id }}" class="ic_container">
+                                    <img src="{% static "NoticeboardApp/images/400x250/" %}{{ category.name }}.jpg"
+                                         alt="{{ category.name }}"/>
+                                    <div class="overlay" style="display:none;"></div>
+                                    <div class="ic_caption">
+                                        <h3>{{ category.name }}</h3>
+                                        <p class="ic_text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
 
+{% block scripts %}
+<script src="{% static "NoticeboardApp/js/jquery.capSlide.js" %}" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function() {
+        {% for category in allCategories %}
+        $("#capslide_image{{ category.id }}").capslide({
+            caption_color	: 'black',
+            caption_bgcolor	: 'white',
+            overlay_bgcolor : '#832EA5',
+            showcaption	    : true
+        });
+        {% endfor %}
+    });
+</script>
 {% endblock %}
