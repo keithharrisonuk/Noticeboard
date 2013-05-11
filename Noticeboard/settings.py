@@ -71,7 +71,7 @@ MEDIA_URL = ''
 STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    #os.path.join(NOTICEBOARD_APP_DIR, 'static'),
+    os.path.join(NOTICEBOARD_APP_DIR, 'static'),
 )
 
 # List of finder classes that know how to find static files in
