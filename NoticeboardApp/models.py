@@ -30,3 +30,4 @@ class Notice(models.Model):
 
     def name(self):
         return (self.FirstName + " " + self.LastName).strip()
+

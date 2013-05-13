@@ -1,0 +1,18 @@
+{% extends "NoticeboardApp/base.html" %}
+{% block content %}
+<h1>Add Your Ad</h1>
+<form class="form-horizontal" method="post">
+    <div class="control-group">
+        <label class="control-label" for="id_new_item">Company Name</label>
+        <div class="controls">
+            <input type="text" name="item_text" id="id_new_item" placeholder="Company Name" />
+        </div>
+    </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn">Send</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
+
