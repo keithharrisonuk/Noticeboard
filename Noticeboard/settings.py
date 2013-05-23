@@ -2,7 +2,7 @@
 import dj_database_url
 import os
 
-DEBUG = bool(os.environ.get('DEBUG', False))
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ENVIRONMENT = os.environ.get('ENVIRONMENT', 'DEV')
 
@@ -17,8 +17,8 @@ NOTICEBOARD_APP_DIR = os.path.join(NOTICEBOARD_DIR, '../NoticeboardApp')
 ROOT_DIR = os.path.join(NOTICEBOARD_DIR, "..")
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'C:\Users\Keith\PycharmProjects\Noticeboard.sqlite',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.		
+        'NAME': ROOT_DIR + '\\Noticeboard.sqlite',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -152,7 +152,7 @@ LOGGING = {
 }
 
 # Parse database configuration from $DATABASE_URL
-DATABASES['default'] = dj_database_url.config(default='sqlite:///C:/Users/Keith/PycharmProjects/Noticeboard.sqlite')
+DATABASES['default'] = dj_database_url.config(default='sqlite:///' + ROOT_DIR + '/Noticeboard.sqlite')
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
